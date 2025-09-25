@@ -82,6 +82,46 @@ yarn dev
 ---
 
 
+## Linter / Formatter - ESLint / Prettier
+
+このプロジェクトでは **JavaScript / TypeScript のコード整形および静的解析ツール**として **ESLint** と **Prettier** を使用しています。
+
+---
+
+### 使用目的
+
+#### ESLint  
+- 構文エラーやバグの検出
+- 型の不整合や未使用変数の検出
+- React Hooks のルール違反チェック
+- チームで統一されたコードスタイルの維持
+
+#### Prettier  
+- 自動コード整形
+- セミコロン、インデント、クォートなどのスタイル統一
+- 保存時のフォーマット対応
+
+---
+
+### CLI での実行方法
+
+```bash
+# ESLint によるコードチェック
+yarn lint
+
+# ESLint による自動修正を含むチェック
+yarn lint:fix
+
+# Prettier によるフォーマットチェック
+yarn format
+
+# Prettier による自動整形
+yarn format:fix
+```
+
+---
+
+
 ## GitHub ブランチ運用ルール
 
 ### ブランチ一覧と役割
