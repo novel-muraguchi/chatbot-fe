@@ -3,36 +3,36 @@ name: CI Pipeline
 on:
   push: # push時に実行
     paths:
-      - "**"
-      - ".github/workflows/frontend-ci.yaml"
+      - '**'
+      - '.github/workflows/frontend-ci.yaml'
   pull_request: # プルリクエスト作成・更新時に実行
     paths:
-      - "**"
-      - ".github/workflows/frontend-ci.yaml"
+      - '**'
+      - '.github/workflows/frontend-ci.yaml'
 
 jobs:
   lint-format-test:
-    name: Lint / Format / Test  # ジョブ名
+    name: Lint / Format / Test # ジョブ名
 
-    runs-on: ubuntu-latest  # 最新の Ubuntu 仮想環境上でジョブを実行
+    runs-on: ubuntu-latest # 最新の Ubuntu 仮想環境上でジョブを実行
 
     steps:
-      - name: Checkout code  # リポジトリのコードを取得
+      - name: Checkout code # リポジトリのコードを取得
         uses: actions/checkout@v4
 
-      - name: Use Node.js version from .nvmrc  # .nvmrc に指定された Node バージョンを使用
+      - name: Use Node.js version from .nvmrc # .nvmrc に指定された Node バージョンを使用
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
 
-      - name: Install dependencies  # Yarn で依存関係をインストール
-        run: yarn install --frozen-lockfile  # lockfile に変更を加えないように厳密にインストール
+      - name: Install dependencies # Yarn で依存関係をインストール
+        run: yarn install --frozen-lockfile # lockfile に変更を加えないように厳密にインストール
 
-      - name: Run ESLint (Linter)  # コードの静的解析
+      - name: Run ESLint (Linter) # コードの静的解析
         run: yarn lint
 
-      - name: Run Prettier (Formatter Check)  # Formatter
+      - name: Run Prettier (Formatter Check) # Formatter
         run: yarn format
 
-      - name: Run Vitest tests  # テストを実行
+      - name: Run Vitest tests # テストを実行
         run: yarn test --run --passWithNoTests
