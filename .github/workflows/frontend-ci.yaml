@@ -4,11 +4,9 @@ on:
   push: # push時に実行
     paths:
       - '**'
-      - '.github/workflows/frontend-ci.yaml'
   pull_request: # プルリクエスト作成・更新時に実行
     paths:
       - '**'
-      - '.github/workflows/frontend-ci.yaml'
 
 jobs:
   lint-format-test:
