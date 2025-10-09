@@ -2,10 +2,10 @@
 
 ## プロジェクト概要
 
-このプロジェクトは、社内向けチャットボットのフロントエンドです。  
-バックエンドからの回答APIと連携し、チャット形式でドキュメントベースのQA機能を提供します。
+本プロジェクトは、社内向けチャットボットのフロントエンドである。
+バックエンドからの回答APIと連携し、チャット形式でドキュメントベースのQA機能を提供する。
 
-React + TypeScript + Vite をベースに構築されています。
+React + TypeScript + Vite をベースに構築している。
 
 ---
 
@@ -39,14 +39,14 @@ React + TypeScript + Vite をベースに構築されています。
   1.22.22
   ```
 
-  Yarn が未インストールの場合、以下のコマンドでグローバルインストールします：
+  Yarn が未インストールの場合、以下のコマンドでグローバルインストールする：
 
   ```bash
   npm install -g yarn
   ```
 
-  このコマンドは、Node.js 付属の `npm` を使用して、Yarn を**グローバル環境**（どのプロジェクトでも使える状態）にインストールします。  
-  以降、プロジェクトごとの依存管理やスクリプト実行を Yarn で行うことができます。
+  このコマンドは、Node.js 付属の `npm` を使用して、Yarn をグローバル環境にインストールする。
+  以降、プロジェクトごとの依存管理やスクリプト実行を Yarn で行う。
 
 ---
 
@@ -54,7 +54,7 @@ React + TypeScript + Vite をベースに構築されています。
 
 1. リポジトリをクローン
 
-以下は **SSH を使用した場合の例** です。HTTPS を使用する場合は GitHub 上でリポジトリのクローン用 URL を変更してください。
+以下は **SSH を使用した場合の例。** HTTPS を使用する場合は GitHub 上でリポジトリのクローン用 URLに切り替える 。
 
 ```bash
 git clone git@github.com:novel-muraguchi/chatbot-fe.git
@@ -67,7 +67,7 @@ cd chatbot-fe
 yarn install
 ```
 
-> 初回実行時、`yarn.lock`および node_modulesフォルダが自動生成されます。
+> 初回実行時、`yarn.lock`および node_modulesフォルダが自動生成される。
 
 3. 開発サーバーを起動
 
@@ -82,7 +82,7 @@ yarn dev
 
 ## Linter / Formatter - ESLint / Prettier
 
-このプロジェクトでは **JavaScript / TypeScript のコード整形および静的解析ツール**として **ESLint** と **Prettier** を使用しています。
+本プロジェクトでは **JavaScript / TypeScript のコード整形および静的解析ツール**として **ESLint** と **Prettier** を使用している。
 
 ---
 
