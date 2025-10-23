@@ -12,7 +12,16 @@ export const Header = () => {
   };
 
   return (
-    <Box as='header' bg='#a9c9eb' px={4} py={1} h={HEADER_HEIGHT} display='flex' alignItems='center' boxShadow='md'>
+    <Box
+      as='header'
+      bg='#a9c9eb'
+      px={4}
+      py={1}
+      h={HEADER_HEIGHT}
+      display='flex'
+      alignItems='center'
+      boxShadow='md'
+    >
       <Box
         as='button'
         onClick={handleNavigateHome}
@@ -23,7 +32,14 @@ export const Header = () => {
         border='none'
         p={0}
       >
-        <Image src={icon} alt='Novel Guide' w='auto' h='120px' objectFit='contain'  _hover={{ opacity: 0.9 }} />
+        <Image
+          src={icon}
+          alt='Novel Guide'
+          w='auto'
+          h='120px'
+          objectFit='contain'
+          _hover={{ opacity: 0.9 }}
+        />
       </Box>
     </Box>
   );
