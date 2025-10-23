@@ -1,11 +1,13 @@
-import { Box, Text } from '@chakra-ui/react';
-import { Header } from '@/components/organisms/Header';
+import { Container, Text } from '@chakra-ui/react';
+import { Header, HEADER_HEIGHT } from '@/components/organisms/Header';
 
 export const KnowledgePresentational = () => {
   return (
-    <Box minH='100vh'>
+    <>
       <Header />
-      <Text>Knowledge Upload Page</Text>
-    </Box>
+      <Container maxW='full' px={0} h={`calc(100vh - ${HEADER_HEIGHT})`} bg='#fafdff' mt={0}>
+        <Text>Knowledge Upload Page</Text>
+      </Container>
+    </>
   );
 };

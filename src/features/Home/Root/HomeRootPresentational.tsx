@@ -1,6 +1,7 @@
 import { Container, Box, Flex, Image, Text } from '@chakra-ui/react';
 import { Header, HEADER_HEIGHT } from '@/components/organisms/Header';
 import newChatIcon from '@/assets/new_chat_icon.png';
+import { QuestionField } from './ui/QuestionField';
 
 
 export const HomeRootPresentational = () => {
@@ -22,7 +23,9 @@ export const HomeRootPresentational = () => {
               </Text>
             </Box>
           </Box>
-          <Box flex='1' bg='white' />
+          <Flex flex='1' bg='white' flexDir='column' justify='flex-end' px='40px'>
+            <QuestionField />
+          </Flex>
         </Flex>
       </Container>
     </>
