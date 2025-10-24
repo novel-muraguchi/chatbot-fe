@@ -1,9 +1,22 @@
-import { Container, Box, Flex, Image, Text } from '@chakra-ui/react';
+import { Container, Box, Flex, Image, Text, VStack, For, Show } from '@chakra-ui/react';
 import { Header, HEADER_HEIGHT } from '@/components/organisms/Header';
 import newChatIcon from '@/assets/new_chat_icon.png';
-import { QuestionField } from './ui/QuestionField';
+import { ChatField } from '@/features/Home/Root/ui/ChatField';
+import { QuestionField } from '@/features/Home/Root/ui/QuestionField';
+import { QuestionHistory } from '@/features/Home/Root/ui/QuestionHistory';
+import { type ChatMessage } from '@/features/Home/Root/types/chatMessage';
 
-export const HomeRootPresentational = () => {
+interface HomeRootPresentationalProps {
+  chatData: ChatMessage[] | undefined;
+  selectedChatId: number | null;
+  setSelectedChatId: (id: number | null) => void;
+}
+
+export const HomeRootPresentational = ({
+  chatData,
+  selectedChatId,
+  setSelectedChatId,
+}: HomeRootPresentationalProps) => {
   return (
     <>
       <Header />
@@ -35,8 +48,23 @@ export const HomeRootPresentational = () => {
                 Chat
               </Text>
             </Box>
+            <Box flex='1' overflowY='auto'>
+              <QuestionHistory chatData={chatData} setSelectedChatId={setSelectedChatId} />
+            </Box>
           </Box>
-          <Flex flex='1' bg='white' flexDir='column' justify='flex-end' px='40px'>
+          <Flex flex='1' bg='white' flexDir='column' justify='flex-end' px='40px' pt='32px'>
+            <VStack overflowY={'auto'} flex={'1'} w={'100%'}>
+              <For each={chatData}>
+                {(chat) => (
+                  <>
+                    <Show when={chat.id === selectedChatId}>
+                      <ChatField message={chat.question} />
+                      <ChatField message={chat.answer} isAnswer={true} />
+                    </Show>
+                  </>
+                )}
+              </For>
+            </VStack>
             <QuestionField />
           </Flex>
         </Flex>
