@@ -1,5 +1,5 @@
-import { renderHook, type RenderHookOptions, type RenderHookResult } from '@testing-library/react'
-import { CustomRenderProvider } from '../providers/customRenderProvider'
+import { renderHook, type RenderHookOptions, type RenderHookResult } from '@testing-library/react';
+import { CustomRenderProvider } from '../providers/customRenderProvider';
 
 export const customRenderHook = <Result, Props>(
   callback: (initialProps: Props) => Result,
@@ -8,5 +8,5 @@ export const customRenderHook = <Result, Props>(
   return renderHook(callback, {
     wrapper: CustomRenderProvider,
     ...options,
-  })
-}
+  });
+};
