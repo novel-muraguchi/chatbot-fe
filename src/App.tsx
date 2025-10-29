@@ -1,7 +1,9 @@
+import { AppRouter } from './routes/home';
+
 function App() {
   return (
     <>
-      <h1>ChatBot FE</h1>
+      <AppRouter />
     </>
   );
 }

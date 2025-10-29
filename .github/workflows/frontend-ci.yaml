@@ -27,7 +27,7 @@ jobs:
         run: yarn install --frozen-lockfile # lockfile に変更を加えないように厳密にインストール
 
       - name: Run ESLint (Linter) # コードの静的解析
-        run: yarn lint
+        run: yarn lint --max-warnings=0
 
       - name: Run Prettier (Formatter Check) # Formatter
         run: yarn format
